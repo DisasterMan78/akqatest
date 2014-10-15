@@ -1,0 +1,143 @@
+<!doctype html>
+<!--[if IE 7]><html lang="en" class="ie7 ltie9 ltie10"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie8 ltie9 ltie10"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9 ltie10"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+Only using Modernizr for HTML5 Shiv, so no point loading for other browsers
+-->
+<!--[if lt IE 9]>
+	<script src="assets/js/vendor/modernizr-2.8.3.custom.min.js"></script>
+<![endif]-->
+
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="assets/css/test.css">
+</head>
+<body>
+
+	<header class="full-width">
+		<div class="row">
+			<a id="site-logo" href="index.html" title="AKQA - Home link" class="col span-2"></a>
+		</div>
+	</header>
+
+	<section class="basket full-width">
+		<section class="info row">
+
+			<h1 class="col">Your Basket</h1>
+			<p class="col">
+				Items you have added to your basket are shown below.<br>
+				Adjust the quantities or remove items before continuing your purchase.
+			</p>
+
+		</section>
+
+		<form class="basket-form row" action="index.html" method="post">
+			<table cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<td class="span-3">Product</td>
+						<td class="span-1">Price</td>
+						<td class="span-1 align-center">Qty</td>
+						<td class="span-1">Cost</td>
+						<td class="span-1"></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="item-row">
+						<td>Cotton T-Shirt, Medium</td>
+						<td>£1.99</td>
+						<td class="cell-qty">
+							<input id="qty-1" name="qty-1" type="text" data-price="1.99" data-controls="#qty-control-1" data-total="#item-total-1" data-remove="#remove-1" class="basket-quantity" value="0" aria-label="Input quantity of Cotton T-Shirt, Medium" />
+							<span id="qty-control-1" class="qty-control">
+								<button class="qty-increase" data-quantity="#qty-1" aria-role="spinbutton" aria-label="Increase quantity of Cotton T-Shirt, Medium">+</button>
+								<button class="qty-decrease" data-quantity="#qty-1" aria-role="spinbutton" aria-label="Decrease quantity of Cotton T-Shirt, Medium" disabled>-</button>
+							</span>
+						</td>
+						<td class="col item-total">£<var id="item-total-1">0.00</var></td>
+						<td class="span-1">
+							<button id="remove-1" class="basket-remove" data-quantity="#qty-1" disabled>Remove from basket</button>
+						</td>
+					</tr>
+					<tr class="item-row">
+						<td>Baseball Cap, One Size</td>
+						<td>£2.99</td>
+						<td class="cell-qty">
+							<input id="qty-2" name="qty-2" type="text" data-price="2.99" data-controls="#qty-control-2" data-total="#item-total-2" data-remove="#remove-2" class="basket-quantity" value="0" aria-label="Input quantity of Baseball Cap, One Size" />
+							<span id="qty-control-2" class="qty-control">
+								<button class="qty-increase" data-quantity="#qty-2" aria-role="spinbutton" aria-label="Increase quantity of Baseball Cap, One Size">+</button>
+								<button class="qty-decrease" data-quantity="#qty-2" aria-role="spinbutton" aria-label="Decrease quantity of Baseball Cap, One Size" disabled>-</button>
+							</span>
+						</td>
+						<td class="col item-total">£<var id="item-total-2">0.00</var></td>
+						<td class="no-stripe ">
+							<button id="remove-2" class="basket-remove" data-quantity="#qty-2" disabled>Remove from basket</button>
+						</td>
+					</tr>
+					<tr class="item-row">
+						<td>Swim Shorts, Medium</td>
+						<td>£3.99</td>
+						<td class="cell-qty">
+							<input id="qty-3" name="qty-3" type="text" data-price="3.99" data-controls="#qty-control-3" data-total="#item-total-3" data-remove="#remove-3" class="basket-quantity" value="0" aria-label="Input quantity of Swim Shorts, Medium" />
+							<span id="qty-control-3" class="qty-control">
+								<button class="qty-increase" data-quantity="#qty-3" aria-role="spinbutton" aria-label="Increase quantity of Swim Shorts, Medium">+</button>
+								<button class="qty-decrease" data-quantity="#qty-3" aria-role="spinbutton" aria-label="Decrease quantity of Swim Shorts, Medium" disabled>-</button>
+							</span>
+						</td>
+						<td class="col item-total">£<var id="item-total-3">0.00</var></td>
+						<td class="span-1">
+							<button id="remove-3" class="basket-remove" data-quantity="#qty-3" disabled>Remove from basket</button>
+						</td>
+					</tr>
+					<tr class="subtotal total-row no-stripe">
+						<td colspan="3">Subtotal</td>
+						<td class="amount">£<var id="subtotal">0.00</var></td>
+						<td></td>
+					</tr>
+					<tr class="vat total-row">
+						<td colspan="3">VAT@20%</td>
+						<td class="amount">£<var id="vat">0.00</var></td>
+						<td></td>
+					</tr>
+					<tr class="total total-row no-stripe">
+						<td colspan="3">Total Cost</td>
+						<td class="amount">£<var id="total">0.00</var></td>
+						<td></td>
+					</tr>
+					<tr class="submit">
+						<td colspan="4">
+							<button type="submit" id="button-buy" disabled>Buy Now &raquo;</button>
+						</td>
+				</tbody>
+			</table>
+		</form>
+
+	</section>
+
+	<footer>
+		<small class="full-width"><strong>© 2013 AKQA Ltd.</strong> Registered in England: 2964394</small>
+	</footer>
+
+<!--
+Overlay and controls added for convenience when checking visual accuracy.
+This was not used in development and is not for production
+-->
+<div class="overlay"></div>
+<div class="overlay-control">toggle overlay</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script src="assets/js/test.js"></script>
+
+</body>
+</html>

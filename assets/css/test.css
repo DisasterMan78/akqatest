@@ -1,0 +1,419 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:400,700);
+
+
+
+/* Grid */
+
+.full-width{
+	display   : block;
+	width     : 100%;
+	max-width : 640px;
+	margin    : 0 auto;
+}
+
+.row{
+	margin-left : 12.5%;
+}
+
+.col,
+td {
+	margin-left : 0%;
+	padding     : 0 10px;
+}
+
+.row .col:first-child {
+	margin-left : 0%;
+}
+
+.span-1 {
+	width : 14.2857142857%;
+}
+.span-2 {
+	width : 28.5714285714%;
+}
+.span-3 {
+	width : 42.8571428571%;
+}
+.span-4 {
+	width : 57.1428571429%;
+}
+.span-5 {
+	width : 71.4285714286%;
+}
+.span-6 {
+	width : 85.7142857143%;
+}
+.span-7 {
+	margin-left : 0;
+	width       : 100%;
+}
+
+/* Overlay - not for production */
+
+.overlay{
+	position       : absolute;
+	width          : 100%;
+	height         : 1020px;
+	top            : 0;
+	left           : 0;
+	background     : url('../dev/overlay.png') center top no-repeat;
+	pointer-events : none;
+	opacity        : 0.5;
+	z-index        : 1;
+	display        : none;
+}
+.overlay-control{
+	position      : absolute;
+	width         : 50px;
+	height        : 50px;
+	top           : 0;
+	left          : 0;
+	margin-bottom : 10px;
+	padding-top   : 10px;
+	background    : #7fd0f5;
+	text-align    : center;
+	cursor        : pointer;
+	z-index: 2;
+}
+
+
+
+/* Inheritable rules */
+
+*{
+	box-sizing : border-box;
+}
+
+html{
+	font-family : 'Droid Serif', serif;
+	font-size   : 12px;
+}
+
+body{
+	background          : #dadada;
+	margin              : 0;
+	padding-bottom      : 50px;
+	background-color    : #dadada;
+	background-image    : url( '../images/bg-gradient.png' );
+	background-image    : url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAPTCAMAAABG1ZMCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjZEMDU2RUM0QkMxMTFFNDlBNTBERjU0MTA2OTExQjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjZEMDU2RUQ0QkMxMTFFNDlBNTBERjU0MTA2OTExQjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowNkEwREQ3RjRCQkYxMUU0OUE1MERGNTQxMDY5MTFCNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowNkEwREQ4MDRCQkYxMUU0OUE1MERGNTQxMDY5MTFCNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsnohagAAAByUExURf7+/tvb2/39/fz8/Nzc3N3d3fv7+/r6+t7e3vn5+d/f39ra2vj4+ODg4P///+Hh4ff39+Pj4/X19eLi4vb29uXl5eTk5PPz8/T09Ofn5+3t7ebm5vHx8e/v7+vr6+jo6PDw8Onp6fLy8u7u7uzs7Orq6p4cVYUAAABiSURBVHjatMEHAkNAFEDBRYioUYLoUe5/xVxh3//MmMzwd3Av66kHik/xl2gi+MZruIQ7tEU3cARXcAJ36z14WJ/B0/oPXMAvOIAftEELuIJzPBWMRENxX/Gh7lw25v8CDADkzD+sqEqP3AAAAABJRU5ErkJggg==' );
+	background-position : center top;
+	background-repeat   : repeat-x;
+}
+
+.ie7 body{
+	background-image    : url( '../images/bg-gradient.png' );
+}
+
+h1{
+	margin         : 30px 0 0;
+	font-size      : 2.5em;
+	font-size      : 2.5rem;
+	font-weight    : 700;
+	letter-spacing : -0.14rem;
+}
+
+.ie7 h1{
+	margin-top : 0;
+}
+
+p{
+	margin         : 1em 0;
+	margin         : 1rem 0;
+	font-size      : 1.167em;
+	font-size      : 1.167rem;
+	line-height    : 1.45em;
+	line-height    : 1.45rem;
+	letter-spacing : -0.06rem;
+}
+
+strong{
+	font-weight : 700;
+}
+
+var{
+	font-style : normal;
+}
+
+button{
+	cursor : pointer;
+}
+
+html:not(.ie7) button:disabled{
+	opacity : 0.5;
+}
+
+.align-center{
+	text-align: center !important;
+}
+
+header{
+	position    : relative;
+	height      : 215px;
+	padding-top : 130px;
+}
+
+#site-logo{
+	display             : block;
+	height              : 48px;
+	background          : url( '../images/logo-akqa.png' );
+	background          : url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAwCAYAAADn/d+1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDZBMERENzk0QkJGMTFFNDlBNTBERjU0MTA2OTExQjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDZBMEREN0E0QkJGMTFFNDlBNTBERjU0MTA2OTExQjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowNkEwREQ3NzRCQkYxMUU0OUE1MERGNTQxMDY5MTFCNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowNkEwREQ3ODRCQkYxMUU0OUE1MERGNTQxMDY5MTFCNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pg9dORcAAAd7SURBVHja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' );
+	background-repeat   : no-repeat;
+	background-position : 12.5% 0;
+}
+.ie7 #site-logo{
+	background-image : url( '../images/logo-akqa.png' );
+}
+.info{
+	margin-bottom : 61px;
+}
+
+.ie7 .basket{
+	margin-top : -100px;
+}
+
+.basket-form table{
+	width          : 100%;
+	border-spacing : 0;
+}
+
+.basket-form td{
+	text-align : right;
+}
+
+.basket-form td:first-child,
+.basket-form td:last-child,
+.basket-form tbody .cell-qty{
+	text-align : left;
+}
+
+.basket-form thead td{
+	border-bottom  : 2px solid #787878;
+	font-size      : 1.5em;
+	font-size      : 1.5rem;
+	font-weight    : 700;
+	letter-spacing : -0.07rem;
+}
+
+.basket-form thead td:last-child{
+	border-bottom : none;
+}
+
+.basket-form tbody tr:first-child td{
+	padding-top : 23px;
+}
+
+.basket-form tbody tr:nth-child(even):not(.no-stripe) td:not(.no-stripe){
+	background : #ddd;
+}
+
+.basket-form tbody td{
+	height         : 48px;
+	padding-top    : 8px;
+	padding-bottom : 10px;
+	font-size      : 1.5em;
+	font-size      : 1.5rem;
+	letter-spacing : -0.08rem;
+}
+
+.basket-form .item-total input{
+	float    : none;
+	width    : auto;
+	overflow : hidden;
+}
+
+.basket-form .basket-quantity{
+	float              : left;
+	width              : 40px;
+	height             : 30px;
+	border             : 1px solid #999;
+	border-radius      : 0;
+	background         : #fff;
+	text-align         : right;
+	font-family        : 'Droid Serif', serif;
+	font-size          : 1.1em;
+	font-size          : 1.5rem;
+	-webkit-appearance : none;
+}
+
+.basket-form .qty-control{
+	display  : inline-block;
+	float    : right;
+	width    : 16px;
+	height   : 30px;
+	overflow : visible;
+}
+
+.ie7 .basket-form .qty-control{
+	height     : 34px;
+}
+
+.basket-form .qty-control button{
+	display     : block;
+	width       : 16px;
+	height      : 14px;
+	padding     : 0 3px;
+	color       : #fff;
+	background  : #999;
+	border      : none;
+	line-height : 0em;
+	line-height : 0rem;
+}
+
+.ie7 .basket-form .qty-control button{
+	height     : 16px;
+	line-height: 1em;
+}
+
+.basket-form .qty-decrease{
+	margin-top : 2px;
+}
+
+.basket-form .basket-remove{
+	width               : 36px;
+	height              : 33px;
+	margin-top          : -3px;
+	text-indent         : -9999px;
+	border              : none;
+	background          : url( '../images/trash.png' );
+	background          : url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODFCQjMzRDM0QkQ2MTFFNDlBNTBERjU0MTA2OTExQjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODFCQjMzRDQ0QkQ2MTFFNDlBNTBERjU0MTA2OTExQjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyNkQwNTZGNjRCQzExMUU0OUE1MERGNTQxMDY5MTFCNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MUJCMzNEMjRCRDYxMUU0OUE1MERGNTQxMDY5MTFCNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pj/4wn4AAAFpSURBVHja7JQ9SwNBEIbvLjHiF35HsBErBX+ApVhaWNhbx9LSUgVBW23iD7ARGwvBxsJS/4JgIYIoisbkVPxIzmfgXVgWDYKNhQsPzNzNzM7O7E4cRaXoizUOh1CBOhRhHcqhYd6TByAHDeiEZbiFWHoKg9ITuHYBRmELxuTckLE5FxT8A9qDAJbdCkrpBGES3mWcRM1XJlqgZgHmEV7hTkf4ycqUXdGOsANTMAP3SrHuZRPqtlqhCpuuiIsw5+2Q6ki90l9En2fzALsu4pUKtapAN9LXYBbOVdwl/bcOXJhNErT0GPa9ih/BAbypzXv6n3cdCiveD12SnZOzszoMeXVpNGtZ9s33OPyfRL9c/wH+YoAne6Lec029eWAv9dGbGYk/kQpysus7oatszsMwokf1rOFjN7JNAXKxZuI2LMCZrnOm3cyoRztWlIUF64ZTmHYZlLWzZXDpOXdIrnqzsabjbdgT/xRgAI3EViDq1p5hAAAAAElFTkSuQmCC' );
+	background-position : center center;
+	background-repeat   : no-repeat;
+}
+
+.ie7 .basket-form .basket-remove{
+	background-image : url( '../images/trash.png' );
+}
+
+.basket-form tbody tr.subtotal,
+.basket-form tbody tr.vat{
+	color      : #666;
+}
+
+.basket-form .subtotal td{
+	padding-top    : 36px;
+	padding-bottom : 0;
+	background     : transparent
+}
+
+.basket-form .vat td{
+	height      : 38px;
+	padding-top : 0;
+}
+
+.basket-form tbody tr.total td{
+	background : transparent;
+}
+
+.basket-form #button-buy{
+	float          : right;
+	width          : 125px;
+	height         : 51px;
+	margin-top     : 31px;
+	padding        : 0;
+	color          : #fff;
+	background     : #006;
+	border         : none;
+	border-radius  : 11px;
+	font-family    : 'Droid Sans', sans-serif;
+	font-size      : 1.3em;
+	font-size      : 2rem;
+	font-weight    : 700;
+	letter-spacing : -0.1rem;
+	box-shadow     : 3px 3px 9px 0px rgba(0, 0, 0, 0.5);
+}
+
+footer{
+	position    : fixed;
+	bottom      : 0;
+	width       : 100%;
+	height      : 42px;
+	padding-top : 12px;
+	color       : #fff;
+	background  : #666;
+	border-top  : 2px solid #000;
+}
+
+footer small{
+	padding-left   : 7.5%;
+	font-family    : 'Droid Sans', sans-serif;
+	font-size      : 1em;
+	font-size      : 1rem;
+	letter-spacing : -0.05rem;
+	text-indent    : 10px;
+}
+
+@media screen and (max-width: 639px) {
+
+	header {
+		height      : 135px;
+		padding-top : 50px;
+	}
+
+	#site-logo{
+		min-width   : 100px;
+		margin-left : 10px;
+	}
+
+	.row{
+		margin-left : 0;
+	}
+
+	.basket-form .item-row td {
+		height : 110px;
+	}
+
+		.basket-form .item-row td:last-child {
+			padding-left  : 0;
+			padding-right : 0;
+		}
+
+	.basket-form tbody tr:first-child td{
+		padding-top : 8px;
+	}
+
+	.basket-form thead td,
+	.basket-form tbody td{
+		padding-left  : 5px;
+		padding-right : 5px;
+	}
+
+	.basket-form .basket-quantity{
+		width : 80px;
+	}
+
+	.basket-form .qty-control{
+		display : block;
+		float   : none;
+		width   : 80px;
+		height  : 40px;
+	}
+
+	.basket-form .qty-control button{
+		display   : inline-block;
+		width     : 38px;
+		height    : 38px;
+		font-size : 2rem;
+	}
+
+	.basket-form .subtotal td{
+		padding-top : 0;
+	}
+
+	.basket-form .basket-remove {
+		width  : 40px;
+		height : 40px;
+	}
+
+	.basket-form .amount{
+		min-width : 69px;
+	}
+
+	.basket-form #button-buy{
+		margin-top : 0;
+	}
+
+	.basket-form .total-row td,
+	.basket-form .submit td{
+		height : 30px;
+	}
+}
